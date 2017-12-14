@@ -1,0 +1,24 @@
+<!DOCTYPE HTML>
+<html ng-app="universityApp">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <title>University</title>
+    <script src="js/angular.js"></script>
+    <script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/css/materialize.min.css">
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/materialize/0.100.2/js/materialize.min.js"></script>
+        
+    <link type="text/css" rel="stylesheet" href="css/style.css"/>
+    
+</head>
+<body ng-cloak>    
+    <div class="border">
+        <ng-view></ng-view>
+    </div>
+    <script src="./app/app.js"></script>
+    <script src="./app/controllers/controllers.js"></script>
+    <script src="./app/services/itemsService.js"></script>
+</body>
+</html>
