@@ -1,0 +1,10 @@
+[
+    {"id":1,"name":"Física"},
+    {"id":2,"name":"Química"},
+    {"id":3,"name":"Matemáticas"},
+    {"id":4,"name":"POO"},
+    {"id":5,"name":"DAW"},
+    {"id":6,"name":"MOEG"},
+    {"id":7,"name":"Estadística"},
+    {"id":8,"name":"Redes"}
+]

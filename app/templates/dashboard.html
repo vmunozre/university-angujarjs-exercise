@@ -16,15 +16,15 @@
                 <td>{{s.id}}</td>
                 <td>{{s.name}}</td>
                 <td>{{s.grade}}</td>
-                <td><span ng-repeat="a in subjects">{{a}} </span></td>
+                <td><span ng-repeat="su in subjects">{{su.name}} </span></td>
                 <td class="td-action">
-                    <a href="#/details/{{item.id}}" class="btn-action">🔍</button>
+                    <a href="#/details/{{s.id}}" class="btn-action">🔍</button>
                 </td>
                 <td class="td-action">
-                    <a href="#/edit/{{item.id}}" class="btn-action">✏️</button>
+                    <a href="#/edit/{{s.id}}" class="btn-action">✏️</button>
                 </td>
                 <td class="td-action">
-                    <a class="btn-action" ng-click="removeItem(item.id)">🗑️</button>
+                    <a class="btn-action" ng-click="">🗑️</button>
                 </td>
             </tr>
         </tbody>

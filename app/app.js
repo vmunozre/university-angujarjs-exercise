@@ -10,7 +10,7 @@ app.config(function ($routeProvider) {
         .when('/dashboard',
             {
                 controller: 'DashboardController',
-                templateUrl: 'app/templates/items.html'
+                templateUrl: 'app/templates/dashboard.html'
             })   
         .when('/addStudent',
             {
@@ -27,5 +27,5 @@ app.config(function ($routeProvider) {
                 controller: 'EditItemController',
                 templateUrl: 'app/templates/itemForm.html'
             })
-        .otherwise({ redirectTo: '/login' });
+        .otherwise({ redirectTo: '/dashboard' });
 });
