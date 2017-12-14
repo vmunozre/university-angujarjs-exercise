@@ -13,10 +13,11 @@
     </div>
     <div class="input-group">
         <h4>Asignaturas</h4>        
-        <select  class="browser-default">
-            <option ng-repeat="s in subjets" value="s.id">{{s.name}}</option>
+        <select ng-model="selected" ng-options="s as s.name for s in subjets" class="browser-default {{disabled}}">
+            <!-- <option ng-repeat="s in subjets" value="s.id">{{s.name}}</option> -->
         </select>
-            <button class="waves-effect waves-light btn">Añadir Asignatura</button>
+        <button class="waves-effect waves-light btn" ng-click="addSubjet()">Añadir Asignatura</button>
+        <hr>
         <div>
             <div class="chip" ng-repeat="sub in student.subjets">
                 {{sub.name}}

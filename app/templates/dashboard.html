@@ -16,7 +16,11 @@
                 <td>{{s.id}}</td>
                 <td>{{s.name}}</td>
                 <td>{{s.grade}}</td>
-                <td><span ng-repeat="su in subjects">{{su.name}} </span></td>
+                <td>
+                    <div class="chip" ng-repeat="sub in s.subjets">
+                        {{sub.name}}
+                    </div>
+                </td>
                 <td class="td-action">
                     <a href="#/details/{{s.id}}" class="btn-action">🔍</button>
                 </td>
