@@ -1,16 +1,16 @@
 <div>
     <div class="input-group">
         <label><b>Nombre</b></label>
-        <input type="text" ng-model="item.name" placeholder="Nombre" class="{{disabled}}">
+        <input type="text" ng-model="student.name" placeholder="Nombre" class="{{disabled}}">
     </div>
     <div class="input-group">
         <label><b>Curso</b></label>
-        <input type="number" ng-model="item.grade" placeholder="Curso" min="0" class="{{disabled}}">
+        <input type="number" ng-model="student.grade" placeholder="Curso" min="0" class="{{disabled}}">
     </div>
     
     <hr>
-    <button class="waves-effect waves-light btn green darken-1 {{disabled}}" ng-click="">{{btnText}}</button>
-    <button class="waves-effect waves-light btn red darken-1 {{disabled}}" ng-click="resetForm()">Reset</button>
+    <button class="waves-effect waves-light btn green darken-1 {{disabled}}" ng-click="actionBtn()">{{btnText}}</button>
+    <button class="waves-effect waves-light btn red darken-1 {{disabled}}" ng-click="resetAction()">Reset</button>
     
     <a class="waves-effect waves-light btn" href="#/supermarket">Volver</a>
 </div>

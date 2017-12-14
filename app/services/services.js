@@ -1,20 +1,20 @@
 app.factory("StudentsFactory", function () {
 
     var students = [{
-            name: "Peter",
+            name: "Batman",
             grade: 2,
             subjets: [],
             id: 1
         },
         {
-            name: "Stefan",
-            age: 5,
+            name: "Superman",
+            grade: 5,
             subjets: [],
             id: 2
         },
         {
-            name: "Agnes",
-            age: 2,
+            name: "Wonder Woman",
+            grade: 2,
             subjets: [],
             id: 3
         }
@@ -22,12 +22,12 @@ app.factory("StudentsFactory", function () {
 
     return {
         all: function () {
-            return subjets;
+            return students;
         },
         get: function (_id) {
-            for(var i = 0, iLen = subjets.length; i<iLen; i++){
-                if(subjets[i].id === _id){
-                    return subjets[i];
+            for(var i = 0, iLen = students.length; i<iLen; i++){
+                if(students[i].id === _id){
+                    return students[i];
                 }
             }
             return undefined;
@@ -35,7 +35,7 @@ app.factory("StudentsFactory", function () {
         add: function (_student) {
             var newId = getNextId(students);
             _student.id = newId;
-            students = _student;
+            students.push(_student);
         },
         update: function (_student) {
             var filterArray = students.filter(function(obj){
@@ -46,7 +46,7 @@ app.factory("StudentsFactory", function () {
                 editedStudent = _student;
             }
         },
-        delete: function (_id) {
+        remove: function (_id) {
             for(var i = 0, iLen = students.length; i<iLen; i++){
                 if(students[i].id === _id){
                     students.splice(i,1);

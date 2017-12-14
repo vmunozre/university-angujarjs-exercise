@@ -1,4 +1,4 @@
-var app = angular.module('universitytApp', []);
+var app = angular.module('universityApp', []);
 
 app.config(function ($routeProvider) {
     $routeProvider
@@ -15,17 +15,17 @@ app.config(function ($routeProvider) {
         .when('/addStudent',
             {
                 controller: 'NewStudentController',
-                templateUrl: 'app/templates/itemForm.html'
+                templateUrl: 'app/templates/studentForm.html'
             })   
         .when('/details/:itemId',
             {
                 controller: 'DetailsItemController',
                 templateUrl: 'app/templates/itemForm.html'
             })
-        .when('/edit/:itemId',
+        .when('/edit/:id',
             {
-                controller: 'EditItemController',
-                templateUrl: 'app/templates/itemForm.html'
+                controller: 'EditStudentController',
+                templateUrl: 'app/templates/studentForm.html'
             })
         .otherwise({ redirectTo: '/dashboard' });
 });
