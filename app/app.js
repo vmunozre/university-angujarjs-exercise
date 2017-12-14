@@ -17,10 +17,10 @@ app.config(function ($routeProvider) {
                 controller: 'NewStudentController',
                 templateUrl: 'app/templates/studentForm.html'
             })   
-        .when('/details/:itemId',
+        .when('/details/:id',
             {
-                controller: 'DetailsItemController',
-                templateUrl: 'app/templates/itemForm.html'
+                controller: 'DetailsStudentController',
+                templateUrl: 'app/templates/studentForm.html'
             })
         .when('/edit/:id',
             {

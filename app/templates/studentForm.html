@@ -1,16 +1,32 @@
 <div>
     <div class="input-group">
-        <label><b>Nombre</b></label>
+        <label>
+            <b>Nombre</b>
+        </label>
         <input type="text" ng-model="student.name" placeholder="Nombre" class="{{disabled}}">
     </div>
     <div class="input-group">
-        <label><b>Curso</b></label>
+        <label>
+            <b>Curso</b>
+        </label>
         <input type="number" ng-model="student.grade" placeholder="Curso" min="0" class="{{disabled}}">
     </div>
-    
+    <div class="input-group">
+        <h4>Asignaturas</h4>        
+        <select  class="browser-default">
+            <option ng-repeat="s in subjets" value="s.id">{{s.name}}</option>
+        </select>
+            <button class="waves-effect waves-light btn">Añadir Asignatura</button>
+        <div>
+            <div class="chip" ng-repeat="sub in student.subjets">
+                {{sub.name}}
+            </div>
+        </div>
+    </div>
+
     <hr>
     <button class="waves-effect waves-light btn green darken-1 {{disabled}}" ng-click="actionBtn()">{{btnText}}</button>
     <button class="waves-effect waves-light btn red darken-1 {{disabled}}" ng-click="resetAction()">Reset</button>
-    
+
     <a class="waves-effect waves-light btn" href="#/supermarket">Volver</a>
 </div>

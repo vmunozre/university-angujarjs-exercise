@@ -1,4 +1,4 @@
-app.controller('DashboardController', function ($scope, subjectsService, StudentsFactory) {
+app.controller('DashboardController', function ($scope, StudentsFactory) {
     init();
 
     function init() {
@@ -11,19 +11,25 @@ app.controller('DashboardController', function ($scope, subjectsService, Student
 
 });
 
-app.controller('NewStudentController', function ($scope, $location, subjectsService, StudentsFactory) {
+app.controller('NewStudentController', function ($scope, $location, SubjetsService, StudentsFactory) {
     init();
 
     function init() {
         resetForm();
+        var promise = SubjetsService.get()
+            .then(function(_response){
+                $scope.subjets = _response;
+            });
+
         $scope.btnText = 'Añadir';
         $scope.disabled = '';
+        
     }
 
     $scope.actionBtn = function(){        
         var newStudent = $scope.student;
         StudentsFactory.add(newStudent);
-        $location.path("/dashboard")
+        $location.path("/dashboard");
     }
 
     $scope.resetAction = function(){
@@ -35,9 +41,8 @@ app.controller('NewStudentController', function ($scope, $location, subjectsServ
         }
     }
 });
-app.controller('EditStudentController', function ($scope, $routeParams, $location, subjectsService, StudentsFactory) {
+app.controller('EditStudentController', function ($scope, $routeParams, $location, StudentsFactory) {
     init();
-
     function init() {
         var id = ($routeParams.id) ? parseInt($routeParams.id) : -1;
         $scope.student = StudentsFactory.get(id);
@@ -48,7 +53,7 @@ app.controller('EditStudentController', function ($scope, $routeParams, $locatio
     $scope.actionBtn = function(){        
         var newStudent = $scope.student;
         StudentsFactory.update(newStudent);
-        $location.path("/dashboard")
+        $location.path("/dashboard");
     }
 
     $scope.resetAction = function(){
@@ -56,7 +61,25 @@ app.controller('EditStudentController', function ($scope, $routeParams, $locatio
     }
     function resetForm(){
         $scope.student = {
-            subjets:[]
-        }
+            subjets: []
+        };
+    }
+});
+
+app.controller('DetailsStudentController', function ($scope, $routeParams, $location, StudentsFactory) {
+    init();
+
+    function init() {
+        var id = ($routeParams.id) ? parseInt($routeParams.id) : -1;
+        var student = StudentsFactory.get(id);
+        if(student != undefined){
+            $scope.student = student;
+        } else {
+            alert('ID del alumno no encontrado');
+            $location.path('/dashboard');
+        }            
+        
+        $scope.disabled = 'disabled';
+        $scope.btnText = 'Añadir';
     }
 });

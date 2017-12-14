@@ -66,10 +66,14 @@ app.factory("StudentsFactory", function () {
     }
 });
 
-app.service('subjectsService', function ($http) {
-    this.getSubject = function () {
-        $http.get("app/mocks/subjects.json").success(function(_subjets) {
-            return _subjets;
-        });
-    };
+app.factory('SubjetsService', function ($http, $q) {
+    return{
+        get: function(){
+            var deferred = $q.defer();
+            $http.get("app/mocks/subjects.json").success(function(_response) {
+                deferred.resolve(_response);                
+            });
+            return deferred.promise;
+        }
+    }
 });
