@@ -3,12 +3,12 @@
         <thead>
             <tr>
                 <th>ID</th>
-                <th>Nombre</th>
-                <th>Curso</th>
-                <th>Asignaturas</th>
-                <th>Detalles</th>
-                <th>Editar</th>
-                <th>Eliminar</th>
+                <th translate="TEXT_NOMBRE">Nombre</th>
+                <th translate="TEXT_CURSO">Curso</th>
+                <th translate="TEXT_ASIGNATURAS">Asignaturas</th>
+                <th translate="TEXT_DETALLES">Detalles</th>
+                <th translate="TEXT_EDITAR">Editar</th>
+                <th translate="TEXT_ELIMINAR">Eliminar</th>
             </tr>
         </thead>
         <tbody>
@@ -34,5 +34,7 @@
         </tbody>
     </table>
     <hr>
-    <a class="waves-effect waves-light btn" href="#/addStudent">Añadir Alumno</a>
+    <a class="waves-effect waves-light btn" href="#/addStudent" translate="TEXT_ADD_ALUMNO">Añadir Alumno</a>
+    <button class="waves-effect waves-light btn amber lighten-2" ng-click="changeLang('es')" translate="BTN_ES">ES</button>    
+    <button class="waves-effect waves-light btn green lighten-2" ng-click="changeLang('en')" translate="BTN_EN">EN</button>    
 </div>

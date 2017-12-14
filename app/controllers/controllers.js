@@ -1,4 +1,4 @@
-app.controller('DashboardController', function ($scope, StudentsFactory) {
+app.controller('DashboardController', function ($scope, $translate, StudentsFactory) {
     init();
 
     function init() {
@@ -8,7 +8,9 @@ app.controller('DashboardController', function ($scope, StudentsFactory) {
     $scope.deleteStudent = function(_id){
         StudentsFactory.remove(_id);
     }
-
+    $scope.changeLang = function(_lang){
+        $translate.use(_lang);
+    }
 });
 
 app.controller('NewStudentController', function ($scope, $location, SubjetsService, StudentsFactory) {
