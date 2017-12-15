@@ -39,7 +39,7 @@ app.config(function ($routeProvider, $translateProvider) {
         TEXT_ADD: 'Add',
         TEXT_ELIMINAR: 'Delete',
         TEXT_ADD_ALUMNO: 'New Student',
-        TEXT_ADD_ASIGNATURA: 'Add Subject',
+        TEXT_ADD_ASIGNATURA: 'Add Subjet',
         TEXT_RESET: 'Reset',
         TEXT_VOLVER: 'Return'
 

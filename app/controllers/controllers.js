@@ -27,13 +27,13 @@ app.controller('NewStudentController', function ($scope, $location, SubjetsServi
         $scope.disabled = '';
         
     }
-    $scope.addSubjet = function(){
-        var subjet = {
-            id: $scope.selected.id,
-            name: $scope.selected.name,
-        }
-        $scope.student.subjets.push(subjet);
-    }
+    // $scope.addSubjet = function(){
+    //     var subjet = {
+    //         id: $scope.selected.id,
+    //         name: $scope.selected.name,
+    //     }
+    //     $scope.student.subjets.push(subjet);
+    // }
     $scope.actionBtn = function(){        
         var newStudent = $scope.student;
         StudentsFactory.add(newStudent);
@@ -62,13 +62,13 @@ app.controller('EditStudentController', function ($scope, $routeParams, $locatio
         $scope.btnText = 'Edit';
         $scope.disabled = '';
     }
-    $scope.addSubjet = function(){
-        var subjet = {
-            id: $scope.selected.id,
-            name: $scope.selected.name,
-        }
-        $scope.student.subjets.push(subjet);
-    }
+    // $scope.addSubjet = function(){
+    //     var subjet = {
+    //         id: $scope.selected.id,
+    //         name: $scope.selected.name,
+    //     }
+    //     $scope.student.subjets.push(subjet);
+    // }
     $scope.actionBtn = function(){        
         var newStudent = $scope.student;
         StudentsFactory.update(newStudent);
