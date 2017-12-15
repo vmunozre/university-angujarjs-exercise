@@ -1,29 +1,5 @@
 <div>
-    <div class="input-group">
-        <label>
-            <b translate="TEXT_NOMBRE">Nombre</b>
-        </label>
-        <input type="text" ng-model="student.name" class="{{disabled}}">
-    </div>
-    <div class="input-group">
-        <label>
-            <b translate="TEXT_CURSO">Curso</b>
-        </label>
-        <input type="number" ng-model="student.grade" min="0" class="{{disabled}}">
-    </div>
-    <div class="input-group">
-        <h4  translate="TEXT_ASIGNATURAS">Asignaturas</h4>        
-        <select ng-model="selected" ng-options="s as s.name for s in subjets" class="browser-default {{disabled}}">
-        </select>
-        <button class="waves-effect waves-light btn" ng-click="addSubjet()" translate="TEXT_ADD_ASIGNATURA">Añadir Asignatura</button>
-        <hr>
-        <div>
-            <div class="chip" ng-repeat="sub in student.subjets">
-                {{sub.name}}
-            </div>
-        </div>
-    </div>
-
+    <myform></myform>
     <hr>
     <button class="waves-effect waves-light btn green darken-1 {{disabled}}" ng-click="actionBtn()" translate="TEXT_ADD">add</button>
     <button class="waves-effect waves-light btn red darken-1 {{disabled}}" ng-click="resetAction()" translate="TEXT_RESET">Reset</button>
